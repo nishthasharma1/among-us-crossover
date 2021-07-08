@@ -15,9 +15,7 @@ function setup(){
 function draw(){
   // Code here runs continuously
   background(220);
-  stroke(250,0,0);
-  strokeWeight(4);
-  noFill();
+
   ellipse(50, 50, 50, 50)
 
 }
