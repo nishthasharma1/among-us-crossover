@@ -6,7 +6,7 @@ stroke, strokeWeight
 // Content behind double slashes is a comment. Use it for plain English notes,
 // or for code that you want to temporarily disable.
 
-// Name: elise, partner: fill in
+// Name: Aldo, partner: fill in
 
 function setup(){
   // Code here runs only once
