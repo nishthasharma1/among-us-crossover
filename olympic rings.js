@@ -11,7 +11,7 @@ stroke, strokeWeight, arc, HALF_PI, PI, QUARTER_PI, TWO_PI, line
 function setup(){
   // Code here runs only once
   //800,600
-  createCanvas(800, 6000);
+  createCanvas(800, 700);
 }
 
 function draw (){
@@ -52,9 +52,7 @@ noFill();
   strokeWeight(10);
   ellipse(250 , 160, 100, 100);
   
-  
-  
- //Instagram Logo
+ //Instagram Logo --------
 fill(0,0,0);
 strokeWeight(0);
 rect(130, 250, 150, 150, 20);
@@ -75,7 +73,7 @@ rect(155, 275, 100, 100, 20);
   ellipse(235,295,15, 15);
   
   
-// Dominos Logo
+// Dominos Logo -------
   
 // Left Red Square
 fill(255, 0, 0);
