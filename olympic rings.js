@@ -14,38 +14,51 @@ function setup(){
   createCanvas(800, 6000);
 }
 
-
 function draw (){
   // fill(R, G, B)
   //Blue Ellipse
-noFill;
+noFill();
   stroke(0,0,200);
   strokeWeight(10);
   // ellipse(x-coordinate, y-coordinate (upside down), x-width, y-width)
   ellipse(75, 100, 100, 100);
 // Orange Ellipse 
+  noFill();
     stroke(255,140,0)
     strokeWeight(10);
     ellipse(125,160,100,100);
   
-//Black Ellipose
+//Black Ellipse
+noFill();
   stroke (0,0,0);
   strokeWeight(10);
   ellipse(190,100,100,100);
   
 //Green Ellipse
+noFill();
   stroke(0,128,0);
   strokeWeight(10);
   ellipse(250 , 160, 100, 100);
 //Red Ellipse
+noFill();
   stroke(178,34,34);
   strokeWeight(10);
   ellipse(305,100,100,100);
   
   
-  /* Code here runs continuously
-  background(220);
+ //Instagram Logo
+fill(0,0,0);
+strokeWeight(0);
+rect(130, 250, 150, 150, 20);
 
+
+  
+
+  
+  
+}
+  
+ /* 
   // fill(R, G, B)
   fill(200, 0, 200);
   stroke(0,0,0);
@@ -66,4 +79,4 @@ noFill;
   rect(300, 200, 55, 55);
   */
 
-}
+
