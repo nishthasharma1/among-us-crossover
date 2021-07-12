@@ -22,17 +22,19 @@ noFill();
   strokeWeight(10);
   // ellipse(x-coordinate, y-coordinate (upside down), x-width, y-width)
   ellipse(75, 100, 100, 100);
-// Orange Ellipse 
-  noFill();
-    stroke(255,140,0)
-    strokeWeight(10);
-    ellipse(125,160,100,100);
+
   
 //Black Ellipse
 noFill();
   stroke (0,0,0);
   strokeWeight(10);
   ellipse(190,100,100,100);
+  
+// Orange Ellipse 
+  noFill();
+    stroke(255,140,0)
+    strokeWeight(10);
+    ellipse(125,160,100,100);
   
 //Green Ellipse
 noFill();
@@ -44,6 +46,25 @@ noFill();
   stroke(178,34,34);
   strokeWeight(10);
   ellipse(305,100,100,100);
+  
+noFill();
+  stroke(0,128,0);
+  strokeWeight(10);
+  ellipse(250 , 160, 100, 100);
+  
+  
+//arc
+arc(200, 55, 50, 50, 0, );
+noFill();
+arc(100, 100, 100, 100, QUARTER_PI);
+  
+  
+//arc2
+fill(red);
+arc(100, 55, 50, 50, 0);
+  
+  
+  
   
   
  //Instagram Logo
@@ -66,10 +87,6 @@ rect(155, 275, 100, 100, 20);
   fill(255,255,255);
   ellipse(235,295,15, 15);
   
-
-  //arc
-  
-arc(50, 50, 80, 80, 0, PI + QUARTER_PI);
   
 }
   
