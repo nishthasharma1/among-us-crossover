@@ -1,5 +1,5 @@
 // List p5 functions below so glitch will recognize them
-/* global createCanvas, background 
+/* global createCanvas, background, ellipse, rect
 */
 
 // Content behind double slashes is a comment. Use it for plain English notes,
@@ -16,6 +16,8 @@ function draw(){
   // Code here runs continuously
   background(220);
 
-  //ellipse(50, 50, 50, 50)
+  // ellipse(x-coordinate, y-coordinate (upside down), x-width, y-width)
+  ellipse(150, 100, 20, 50);
+  rect(30, 20, 55, 55);
 
 }
