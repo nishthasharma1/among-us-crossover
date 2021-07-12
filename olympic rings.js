@@ -6,7 +6,7 @@ stroke, strokeWeight, arc, HALF_PI, PI, QUARTER_PI, TWO_PI, line
 // Content behind double slashes is a comment. Use it for plain English notes,
 // or for code that you want to temporarily disable.
 
-// Name: Aldo Ruiz, partner: Nishtha Sharma
+// Name: Nishtha Sharma, partner: Aldo Ruiz
 
 function setup(){
   // Code here runs only once
