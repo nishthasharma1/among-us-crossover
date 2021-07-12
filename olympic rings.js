@@ -77,9 +77,17 @@ rect(155, 275, 100, 100, 20);
   
 // Dominos Logo
   
+// Left Red Square
+fill(255, 0, 0);
+rect(110,500, 200, 20);
   
-  
-  
+//Blue Square
+fill(70,130,180);
+rect(110,600,200,100,20);
+
+//two circles in square one
+fill(250,20)
+  ellipse(110,400,100,100)
 }
   
  /* 
