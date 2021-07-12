@@ -1,6 +1,6 @@
 // List p5 functions below so glitch will recognize them
 /* global createCanvas, background, ellipse, rect, fill, noFill
-stroke, strokeWeight
+stroke, strokeWeight, arc
 */
 
 // Content behind double slashes is a comment. Use it for plain English notes,
@@ -50,11 +50,26 @@ noFill();
 fill(0,0,0);
 strokeWeight(0);
 rect(130, 250, 150, 150, 20);
+  
+//Square
+noFill();
+stroke(255,255,255);
+strokeWeight(10);
+rect(155, 275, 100, 100, 20);
 
-
+//circle
+  stroke(255,255,255);
+  ellipse(205,323,50,50);
+  
+//smaller ciricle
+  strokeWeight (0);
+  fill(255,255,255);
+  ellipse(235,295,15, 15);
   
 
+  //arc
   
+arc(50, 50, 80, 80, 0, PI + QUARTER_PI);
   
 }
   
