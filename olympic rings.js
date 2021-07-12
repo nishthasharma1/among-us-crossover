@@ -14,7 +14,7 @@ function setup(){
 }
 
 function draw(){
-  // Code here runs continuously
+  / Code here runs continuously
   background(220);
 
   // fill(R, G, B)
