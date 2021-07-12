@@ -1,6 +1,6 @@
 // List p5 functions below so glitch will recognize them
 /* global createCanvas, background, ellipse, rect, fill, noFill
-stroke, strokeWeight, arc, HALF_PI, PI, QUARTER_PI, TWO_PI
+stroke, strokeWeight, arc, HALF_PI, PI, QUARTER_PI, TWO_PI, line
 */
 
 // Content behind double slashes is a comment. Use it for plain English notes,
@@ -79,16 +79,20 @@ rect(155, 275, 100, 100, 20);
   
 // Left Red Square
 fill(255, 0, 0);
-rect(110,500, 200, 20);
+rect(110,490,200,100, 20);
   
 //Blue Square
 fill(70,130,180);
 rect(110,600,200,100,20);
 
-//two circles in square one
-fill(250,20)
-  ellipse(110,400,100,100)
+//two circles on the left
+fill(255,255,255,255)
+  ellipse(150,550,25,25)
 }
+
+//line
+fill(0,0,0);
+line(100,100, 100, 100);
   
  /* 
   // fill(R, G, B)
