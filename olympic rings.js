@@ -6,11 +6,12 @@ stroke, strokeWeight
 // Content behind double slashes is a comment. Use it for plain English notes,
 // or for code that you want to temporarily disable.
 
-// Name: Aldo Ruiz, partner: Nishta Sharma
+// Name: Aldo Ruiz, partner: Nishtha Sharma
 
 function setup(){
   // Code here runs only once
-  createCanvas(800, 600);
+  //800,600
+  createCanvas(800, 6000);
 }
 
 
@@ -26,9 +27,6 @@ noFill;
     stroke(255,140,0)
     strokeWeight(10);
     ellipse(125,160,100,100);
-  
-  
-  
   
 //Black Ellipose
   stroke (0,0,0);
