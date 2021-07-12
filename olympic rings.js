@@ -53,20 +53,6 @@ noFill();
   ellipse(250 , 160, 100, 100);
   
   
-//arc
-noFill();
-stroke(0,0,0);
-arc(70, 100, 90, 98, HALF_PI, PI);
-  
-  
-//arc2
-  
-fill (255, 0, 0)
-arc(100, 200 , 100, 100, PI, TWO_PI);
-  
-  
-  
-  
   
  //Instagram Logo
 fill(0,0,0);
@@ -87,6 +73,11 @@ rect(155, 275, 100, 100, 20);
   strokeWeight (0);
   fill(255,255,255);
   ellipse(235,295,15, 15);
+  
+  
+// Dominos Logo
+  
+  
   
   
 }
