@@ -1,164 +1,110 @@
-// CSSI Day 9: Frogger
+// CSSI Day 9: Bravia Balls
 // Group members: ___, ____
 
-/* global createCanvas, colorMode, HSB, random, width, height, background, fill, rect, ellipse, keyCode, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, textSize, text, collideRectCircle, myButton, new Clickable*/
 /*
-TODO
-x fixed starting position for frog
-x all arrow keys for frog
-x move cars
-x car reappears at random y
-x display score
-x reset location, increase score when reach yellow line
-x reduce lives upon collision
-x game over screen
-x you win screen
-----
-BONUS
-- timer
-- car moves faster after score ^
-- play again button
+global createCanvas, gravity, windowWidth, windowHeight, colorMode, HSB, background, random, width, height, fill, noStroke, ellipse
+*/
 
+/*
+WARNING: Code here is substantially different from curriculum page.
+
+GOAL: Refactor this code to use OOP principles
+- Define a CLASS called BouncyDot
+- BouncyDots have all necessary PROPERTIES to 
+  define a dot's position, hue, speed...
+- Replace tasks 1, 2, 3 with METHODS
+- Make code clean and readable
+*/
+
+/* 
+  Todo:
+    1. Make the balls bounce with gravity
 */
 
 
-let backgroundColor, frogX, frogY, score, lives, gameIsOver, car1X, car1Y, car1V;
-let hit1;
-let myButton;
+let dots;
+
 
 function setup() {
-  // Canvas & color settings
-  createCanvas(500, 500);
+  createCanvas(windowWidth - 20, windowHeight - 20);
   colorMode(HSB, 360, 100, 100);
-  backgroundColor = 95;
-  frogX = width/2;
-  frogY = height-20;
-  score = 0;
-  lives = 3;
-  gameIsOver = false;
-  car1X = 0;
-  car1Y = 100;
-  car1V = 5;
- // myButton = new Clickable();
+
+  // 1. Initializing array of many dots
+  dots = [];
+  // Using a for loop, push new dot into array
+  for (let i = 0; i < 50; i++) {
+    dots.push(new BouncyDot());
+  }
 }
 
 function draw() {
-  background(backgroundColor);
-  
-  // Code for gold goal line
-  fill(60, 80, 80);
-  rect(0, 0, width, 50);
-  
-  // Code to display Frog
-  fill(120, 80, 80);
-  ellipse(frogX, frogY, 20);
-  
+  background('black');
+  for (let dot of dots) {
+    // 2. Move the dots
+    dot.move();
 
-  if (!gameIsOver) {
-      moveCars();
-      drawCars();
-      checkCollisions();
-      handleScore();
-      checkEndGame();
-  } else {
-    // Display game over message if the game is over
-    fill(0, 0, 0);
-    if (score == 3) {
-      text("YOU WIN", width/2, height/2);
-      
-      
-    } else if (lives == 0) {
-      text("GAME OVER", width/2, height/2);
+    // 3. Draw the dots
+    dot.paint();
+  }
+}
+
+let gravity = 0.06;
+class BouncyDot {
+  constructor() {
+    this.gravity = 0.3;
+    this.speed = random(0, 10);
+    this.x = random(20, width - 20);
+    this.y = random(20, height - 20);
+    this.r = random(5, 12); // radius
+    this.hue = random(360); //color of the balls in a constant state
+    this.xv = random(0.5, 3);
+    this.yv = random(0.5, 3);
+  }
+
+  move() {
+    // Update pos based on gravity with balls having different speeds
+    this.y += this.speed;
+    this.speed += gravity;
+
+    if (this.y > windowHeight - 20) {
+      this.speed = -0.8 * this.speed;
     }
-  } 
-}
 
-function tryAgain(){
-    myButton.locate(150,230);
-    myButton.draw();
-    myButton.text = "Restart";       //Text of the clickable (string)
-    myButton.textColor = "#000000";   //Color of the text (hex number as a string)
-    myButton.textSize = 12;           //Size of the text (integer)
-    myButton.textFont = "sans-serif"; //Font of the text (string)
-    myButton.color = "#56E445"; 
+    if (this.y > windowHeight - 20) {
+      this.speed = -1.4 * random(1, 5);
+    }
+
+    //date position based on velocity
+    this.x += this.xv;
+    this.y += this.yv;
+    //At left and right edges, relect x-velocity
+    if (this.x - this.r <= 0 || this.x + this.r >= width) {
+      this.xv *= -1; // multiplying by -1 flips sign
+    }
+    // // At top and bottom edges, reflect y-velocity
+    if (this.y - this.r <= 0 || this.y + this.r >= height) {
+      this.yv *= -1;
+    }
     
-    myButton.onPress = function(){
-    score= 0;
-    gameIsOver = false;   
+    if (this.x <= windowWidth - 20){
+  this.hue = random(360);
 }
-
-function keyPressed() {
-  if (keyCode === UP_ARROW) {
-    frogY -= 20;
-  } else if (keyCode === DOWN_ARROW) {
-    frogY += 20;
-  } else if (keyCode === LEFT_ARROW) {
-    frogX -= 20;
-  } else if (keyCode === RIGHT_ARROW) {
-    frogX += 20;
   }
-}
 
-function moveCars() {
-  // Move the car
-  car1X += car1V;
-
-  // Reset if it moves off screen
-  if (car1X > width) {
-    car1X = 0;
-    car1Y = random(50, height-60);
-  }
-}
-
-function drawCars() {
-  // Code for car 1
-  fill(0, 80, 80);
-  rect(car1X, car1Y, 40, 30);
-  // Code for additional cars
-}
-
-function checkCollisions() {
-  // If the frog collides with the car, 
-  // reset the frog and subtract a life.
+  paint() {
+    // Draw dot of the right hue as a circle
+    fill(this.hue, 100, 100);
+    noStroke();
+    ellipse(this.x, this.y, this.r * 2);
+    
   
-  hit1 = collideRectCircle(car1X, car1Y, 40, 30, frogX, frogY, 20);
-  
-  if (hit1) {
-    lives -= 1;
-    frogX = width/2;
-    frogY = height-20;
-  }
-}
-
-function handleScore() {
-  // If the frog makes it into the yellow gold zone, increment the score
-  // and move the frog back down to the bottom.
-  
-  if (frogY < 50) {
-    score += 1;
-    frogX = width/2;
-    frogY = height-20;
-  }
-  
-  // Display info
-  textSize(12);
-  fill(0);
-  // Display Lives
-  text(`Lives: ${lives}`, 10, 20);
-  // Display Score
-  text(`Score: ${score}`, 10, 40);
-}
-
-
-function checkEndGame() {
-  // If lives is zero, game is over
-  // If score is three, game is over
-  if (lives == 0) {
-    gameIsOver = true;
-  } else if (score == 3) {
-    gameIsOver = true;
   }
   
 }
-  
+
+
+function mousePressed() {
+  // We'll use this for console log statements only.
+  const dot = dots[0];
+  console.log(dot.x);
 }
