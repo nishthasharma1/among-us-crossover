@@ -1,34 +1,23 @@
-# Image Classification with Teachable Machine
+# CSSI 2021 - Cohort 9 - WebSocket Example
 
-# Useful Reference Links
+This project is a glitch-based implementation of the video series that can be found
+here -- [https://www.youtube.com/watch?v=bjULmG8fqc8](https://www.youtube.com/watch?v=bjULmG8fqc8&t=6s). A stand alone, GitHub-based
+version can be found here -- [https://github.com/bohdandrahan/Shared-Canvas](https://github.com/bohdandrahan/Shared-Canvas).
 
-- [ML5.js main website](https://learn.ml5js.org/#/)
-- [A Beginner's Guide to Machine Learning with ml5.js (23min)](https://youtu.be/jmznx0Q1fP0)
+This project changes the above in two ways:
+1) Updates to the latest socket.io API -- There will be minor differences in the socket.io calls
+made in the above links and in this project.
+2) Adapt the server setup to how glitch run server -- The above links expect that you are
+running this locally (i.e. directly on a laptop for instance)
 
-# Getting Started
+Unlike previous projects that ran as pure client applications, this project uses a glitch-hosted
+server (see package.json or server.js). Pay attention to the "App Status" in the bottom left corner, and
+turn on the server logs (Tools -> Logs in the bottom left) to see any message from the server side code.
 
-1. (Optional) Watch the beginner's guide video (see references above) for an overview. 
+## How To Run
 
-1. Some other important things to know about ML...
+Open this project twice, each in a separate browser window. Drawing on the canvas in the first window (by draggin the mouse) will show circles in
+a random color. These same circles should show up as red circles in the second window. Conversely, drawing in the second window will show
+circles in a different random color with these same circles show up in red in the first window.
 
-  Machine learning libraries:
-  - Tensorflow is a well-known open source ML library from Google, for python language.
-  - tf.js is Tensorflow for javascript developers. But a better beginner starting point is...
-  - ML5.js, a javascript library that aims to make ML approachable, from a learning perspective as well as a cost perspective.
-  - Teachable Machine, from Google, building off all of the above and making a user-friendly UI for training models.
-  
-  Machine learning as a field:
-  - ML can be very powerful, handling tasks with more ambiguity such as interpreting handwriting, recognizing faces, etc.
-  - ML is generally quite costly since it has to do an incredible number of calculations, sometimes requiring expensive GPUs.
-  - ML is being increasingly used in many aspects of life, from captcha to facial recognition, and there are many ethical considerations to this.
-  
-1. Get started watching the tutorial video [Teachable Machine 1: Image Classification](https://www.youtube.com/watch?v=kwcillcWOg0). Remix current project for starter code, it's basically the "Code Template".
-  1. Find 3-4 objects around your house that are easy to hold and that you will map to emojis.
-  1. Go to [Teachable Machine website](https://teachablemachine.withgoogle.com/) and choose image project, standard image model.
-  1. Make a class for every object you have and use webcam option to upload about 50-100 images of your object in different positions. Move it around, rotate it, get different angels!
-  1. Train the model (DO NOT LEAVE TAB) and test to see if it's working well. If not, recollect data and re-train.
-  1. Export Model > Tensorflow.js > Upload (shareable link). Hit "Upload My Model" and get the shareable link!
-  1. Come back to glitch, remix this project.
-  1. Follow coding steps in video! There's also a final code link in the description if you are stuck.
-  1. Feel free to play around and build off this or try some other ML5.js tutorials from The Coding Train!
-  
+This can be expanded to any number of browser windows, with the red circles showing up in all windows with the project open.

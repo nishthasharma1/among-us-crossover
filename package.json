@@ -1,0 +1,25 @@
+{
+  "name": "cssi-2021-cohort9-websockets",
+  "version": "0.0.1",
+  "description": "A websocket example to bootstrap CSSI 2021 Cohort 9 CYOA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/cssi-cohort9-websockets"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
